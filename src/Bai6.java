@@ -27,21 +27,145 @@ public class Bai6 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        khungThang = new javax.swing.JTextField();
+        khungNam = new javax.swing.JTextField();
+        khungNgay = new javax.swing.JTextField();
+        nutTIm = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Tìm số ngày trong năm");
+
+        jLabel2.setText("Tháng:");
+
+        jLabel3.setText("Năm:");
+
+        jLabel4.setText("Ngày:");
+
+        khungThang.addActionListener(this::khungThangActionPerformed);
+
+        khungNam.setText("2026");
+        khungNam.addActionListener(this::khungNamActionPerformed);
+
+        khungNgay.addActionListener(this::khungNgayActionPerformed);
+
+        nutTIm.setText("Tìm");
+        nutTIm.addActionListener(this::nutTImActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jLabel1))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(khungThang, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(khungNgay, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(nutTIm)
+                                .addGap(0, 42, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(khungNam, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                .addGap(102, 102, 102))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(khungThang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(khungNam, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(khungNgay, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nutTIm))
+                .addContainerGap(179, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void khungThangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungThangActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungThangActionPerformed
+
+    private void khungNgayActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungNgayActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungNgayActionPerformed
+
+    private void nutTImActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nutTImActionPerformed
+                                            
+    try {
+        // 1. Lấy dữ liệu từ khungThang
+        int thang = Integer.parseInt(khungThang.getText());
+        
+        // 2. Xử lý mặc định cho khungNam
+        String textNam = khungNam.getText().trim();
+        int nam;
+        if (textNam.isEmpty()) {
+            nam = 2026; // Mặc định nếu không nhập gì
+            khungNam.setText("2026"); // Hiển thị lại số 2026 lên giao diện cho rõ ràng
+        } else {
+            nam = Integer.parseInt(textNam);
+        }
+
+        // 3. Logic tìm số ngày
+        int soNgay = 0;
+        switch (thang) {
+            case 1, 3, 5, 7, 8, 10, 12 -> soNgay = 31;
+            case 4, 6, 9, 11 -> soNgay = 30;
+            case 2 -> {
+                // Kiểm tra năm nhuận
+                if ((nam % 4 == 0 && nam % 100 != 0) || (nam % 400 == 0)) {
+                    soNgay = 29;
+                } else {
+                    soNgay = 28;
+                }
+            }
+            default -> {
+                javax.swing.JOptionPane.showMessageDialog(this, "Tháng không hợp lệ!");
+                return;
+            }
+        }
+
+        // 4. Hiển thị kết quả
+        khungNgay.setText(String.valueOf(soNgay));
+
+    } catch (NumberFormatException e) {
+        javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng nhập số tháng/năm hợp lệ!");
+    }
+
+    }//GEN-LAST:event_nutTImActionPerformed
+
+    private void khungNamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungNamActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungNamActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +193,13 @@ public class Bai6 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JTextField khungNam;
+    private javax.swing.JTextField khungNgay;
+    private javax.swing.JTextField khungThang;
+    private javax.swing.JButton nutTIm;
     // End of variables declaration//GEN-END:variables
 }
