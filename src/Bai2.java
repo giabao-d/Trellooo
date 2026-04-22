@@ -27,21 +27,109 @@ public class Bai2 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        khungQuongDuong = new javax.swing.JTextField();
+        khungTongTien = new javax.swing.JTextField();
+        nutTinh = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Tính tiền taxi");
+
+        jLabel2.setText("Quảng đường");
+
+        jLabel3.setText("Tổng tiền");
+
+        khungQuongDuong.addActionListener(this::khungQuongDuongActionPerformed);
+
+        khungTongTien.addActionListener(this::khungTongTienActionPerformed);
+
+        nutTinh.setText("Tính");
+        nutTinh.addActionListener(this::nutTinhActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(khungTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(khungQuongDuong, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57)
+                                .addComponent(nutTinh)))))
+                .addContainerGap(97, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(khungQuongDuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(nutTinh)))
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(khungTongTien, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(173, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void khungQuongDuongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungQuongDuongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungQuongDuongActionPerformed
+
+    private void khungTongTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungTongTienActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungTongTienActionPerformed
+
+    private void nutTinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nutTinhActionPerformed
+                                           
+    try {
+        // 1. Lấy dữ liệu quãng đường từ ô nhập liệu
+        // Lưu ý: Tên biến của bạn đang đặt là khungQuongDuong
+        double km = Double.parseDouble(khungQuongDuong.getText());
+
+        // 2. Kiểm tra điều kiện: km < 0
+        if (km < 0) {
+            javax.swing.JOptionPane.showMessageDialog(this, "Dữ liệu nhập sai! Quãng đường không thể âm.");
+            khungTongTien.setText(""); // Xóa kết quả cũ nếu có
+        } else {
+            // 3. Tính tiền: tiền = km * 10.000
+            double tongTien = km * 10000;
+
+            // 4. Hiển thị kết quả lên ô khungTongTien
+            // Sử dụng String.format để hiển thị số đẹp hơn (không bị ký hiệu E+)
+            khungTongTien.setText(String.format("%.0f", tongTien));
+        }
+    } catch (NumberFormatException e) {
+        // Thông báo nếu người dùng nhập chữ hoặc bỏ trống
+        javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng nhập số km hợp lệ!");
+    }
+
+    }//GEN-LAST:event_nutTinhActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +157,11 @@ public class Bai2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField khungQuongDuong;
+    private javax.swing.JTextField khungTongTien;
+    private javax.swing.JButton nutTinh;
     // End of variables declaration//GEN-END:variables
 }
