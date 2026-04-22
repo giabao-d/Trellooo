@@ -27,21 +27,140 @@ public class Bai5 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        nutTim = new javax.swing.JButton();
+        khungA = new javax.swing.JTextField();
+        khungB = new javax.swing.JTextField();
+        khungC = new javax.swing.JTextField();
+        khungSoLonNhat = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Tìm số lớn nhất");
+
+        jLabel2.setText("A:");
+
+        jLabel3.setText("B:");
+
+        jLabel4.setText("C:");
+
+        jLabel5.setText("Số lớn nhất:");
+
+        nutTim.setText("Tìm");
+        nutTim.addActionListener(this::nutTimActionPerformed);
+
+        khungA.addActionListener(this::khungAActionPerformed);
+
+        khungB.addActionListener(this::khungBActionPerformed);
+
+        khungC.addActionListener(this::khungCActionPerformed);
+
+        khungSoLonNhat.addActionListener(this::khungSoLonNhatActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(khungSoLonNhat, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(khungC, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(khungA, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(khungB, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addComponent(nutTim)
+                        .addGap(118, 118, 118))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(khungA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(nutTim)
+                    .addComponent(khungB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(khungC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(khungSoLonNhat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(85, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void khungAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungAActionPerformed
+
+    private void khungBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungBActionPerformed
+
+    private void khungCActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungCActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungCActionPerformed
+
+    private void khungSoLonNhatActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungSoLonNhatActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungSoLonNhatActionPerformed
+
+    private void nutTimActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nutTimActionPerformed
+        try {
+        // 1. Lấy giá trị từ các khung nhập
+        double a = Double.parseDouble(khungA.getText());
+        double b = Double.parseDouble(khungB.getText());
+        double c = Double.parseDouble(khungC.getText());
+        double max = Math.max(a, Math.max(b, c));
+
+        // 3. Hiển thị kết quả lên khungSoLonNhat
+        // Nếu số nguyên thì hiển thị số nguyên, số thực thì giữ nguyên
+        if (max == (long) max) {
+            khungSoLonNhat.setText(String.format("%d", (long) max));
+        } else {
+            khungSoLonNhat.setText(String.valueOf(max));
+        }
+
+    } catch (NumberFormatException e) {
+        // Thông báo nếu người dùng nhập chữ hoặc để trống
+        javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ vào cả 3 ô A, B, C!");
+    }
+    }//GEN-LAST:event_nutTimActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +188,15 @@ public class Bai5 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField khungA;
+    private javax.swing.JTextField khungB;
+    private javax.swing.JTextField khungC;
+    private javax.swing.JTextField khungSoLonNhat;
+    private javax.swing.JButton nutTim;
     // End of variables declaration//GEN-END:variables
 }
