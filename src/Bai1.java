@@ -27,21 +27,119 @@ public class Bai1 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        khungDai = new javax.swing.JTextField();
+        khungRong = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        khungDienTich = new javax.swing.JTextField();
+        nutTinh = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("Tính diện tích hình chữ nhật");
+
+        jLabel2.setText("Chiều dài");
+
+        jLabel3.setText("Chiều rộng");
+
+        khungRong.addActionListener(this::khungRongActionPerformed);
+
+        jLabel5.setText("Diện tích:");
+
+        khungDienTich.addActionListener(this::khungDienTichActionPerformed);
+
+        nutTinh.setText("Tính");
+        nutTinh.addActionListener(this::nutTinhActionPerformed);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(81, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(72, 72, 72))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(khungDienTich, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(khungDai, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(khungRong, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(nutTinh)
+                        .addGap(90, 90, 90))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(khungDai, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(khungRong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nutTinh))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(khungDienTich, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void nutTinhActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nutTinhActionPerformed
+                                                
+                                            
+    try {
+        // 1. Lấy dữ liệu từ ô Chiều dài và Chiều rộng
+        // Lưu ý: Dùng đúng tên biến bạn đã khai báo là khungDai và khungRong
+        double dai = Double.parseDouble(khungDai.getText());
+        double rong = Double.parseDouble(khungRong.getText());
+
+        // 2. Kiểm tra điều kiện (cạnh phải dương)
+        if (dai > 0 && rong > 0) {
+            // 3. Tính diện tích hình chữ nhật: S = dài * rộng
+            double dienTich = dai * rong;
+
+            // 4. Hiển thị kết quả lên khungDienTich
+            khungDienTich.setText(String.valueOf(dienTich));
+        } else {
+            javax.swing.JOptionPane.showMessageDialog(this, "Chiều dài và chiều rộng phải lớn hơn 0!");
+        }
+    } catch (NumberFormatException e) {
+        // Thông báo nếu người dùng nhập chữ hoặc để trống
+        javax.swing.JOptionPane.showMessageDialog(this, "Vui lòng nhập số hợp lệ!");
+    
+}
+
+    }//GEN-LAST:event_nutTinhActionPerformed
+
+    private void khungDienTichActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungDienTichActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungDienTichActionPerformed
+
+    private void khungRongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_khungRongActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_khungRongActionPerformed
 
     /**
      * @param args the command line arguments
@@ -69,5 +167,13 @@ public class Bai1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JTextField khungDai;
+    private javax.swing.JTextField khungDienTich;
+    private javax.swing.JTextField khungRong;
+    private javax.swing.JButton nutTinh;
     // End of variables declaration//GEN-END:variables
 }
